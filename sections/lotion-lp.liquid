@@ -1,0 +1,74 @@
+{{ 'style.css' | asset_url | stylesheet_tag }}
+
+<div class="title_init">
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.content }}</p>
+</div>
+<div class="main_product">
+  {% assign product = section.settings.produto-principal %}
+  <p>
+    {{ product.title }}</p>
+  <p>
+    <div class="img_main">
+      <img
+        src="{{ product.featured_image.src |  image_url: width: '350px'  }}"
+        alt="product.featured_image.alt"
+        width="350px"
+        height="auto" />
+    </div>
+    {{ product.price | money }}</p>
+  <a href="{{ product.url }}">
+    Ver produto
+  </a>
+</div>
+
+
+{% assign collection = section.settings.colecao-principal %}
+<h2>{{ collection.title }}</h2>
+<h3>{{ collection.description }}</h3>
+
+
+<div class="all_products">
+  {% for product in collection.products %}
+    <div class="title_collection">
+      <p>
+        {{ product.title }}</p>
+    </div>
+    <div class="img_all">
+      <img
+        src="{{ product.featured_image.src |  image_url: width: '200px'  }}"
+        alt="product.featured_image.alt"
+        width="200px"
+        height="auto" />
+    </div>
+    <p>
+      {{ product.price | money }}</p>
+    <a href="{{ product.url }}">
+      Ver produto
+    </a>
+  {% endfor %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "lotion-lp",
+    "settings": [
+      {
+        "type": "product",
+        "id": "produto-principal",
+        "label": "Produto Principal"
+      }, {
+        "type": "collection",
+        "id": "colecao-principal",
+        "label": "Coleção Mágica"
+
+      }
+    ],
+    "presets": [
+      {
+        "name": "lotion-lp"
+      }
+    ]
+  }
+{% endschema %}
