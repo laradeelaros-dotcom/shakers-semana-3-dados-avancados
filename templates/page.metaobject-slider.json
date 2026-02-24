@@ -9,17 +9,12 @@
  */
 {
   "sections": {
-    "lotion-lp": {
-      "type": "lotion-lp",
-      "settings": {}
-    },
     "metaobject-slider": {
       "type": "metaobject-slider",
       "settings": {}
     }
   },
   "order": [
-    "lotion-lp",
     "metaobject-slider"
   ]
 }
