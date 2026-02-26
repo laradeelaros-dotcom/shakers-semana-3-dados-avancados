@@ -1,12 +1,27 @@
-<h1>OLÀ</h1>
+{% assign product = section.settings.product %}
+{% assign product = all_product %}
+
+<h1>{{ product.title }}</h1>
+
+{% assign products_relateds = product.metafields.custom.produtos_relacionados.value %}
+
+
+{{ products_relateds.value | json }}
+
 
 {% schema %}
   {
     "name": "metaobject-slider",
-    "settings": [],
+    "settings": [
+      {
+        "type": "product",
+        "id": "produto-principal",
+        "label": "Produto Principal"
+      }
+    ],
     "presets": [
       {
-        "name": "Metaobject Slider"
+        "name": "metaobject-slider"
       }
     ]
   }
