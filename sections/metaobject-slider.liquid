@@ -1,0 +1,64 @@
+{{ 'metaobject-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'metaobject-slider.js' | asset_url }}" defer="defer"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+{% assign main_product = section.settings.produto-principal %}
+{% assign related_list = main_product.metafields.custom.related_products_with_banner.value %}
+
+
+{% if related_list != blank %}
+  <div class="slider-wrapper">
+    <h2>Recomendações para {{ main_product.title }}</h2>
+
+    <div class="swiper my-metaobject-slider">
+      <div class="swiper-wrapper">
+        {% for entry in related_list %}
+
+          {% assign linked_p = all_products[entry.produto_banner.value.handle] %}
+          {% assign banner_img = entry.banner.value %}
+
+          <div class="swiper-slide">
+            <div class="product-card">
+              {% if banner_img %}
+                <img
+                  src="{{ banner_img | image_url: width: 600 }}"
+                  alt=""
+                  class="banner-img">
+              {% endif %}
+
+              <div class="product-details">
+                <img src="{{ linked_p.featured_image | image_url: width: 150 }}" alt="{{ linked_p.title }}">
+                <h3>{{ linked_p.title }}</h3>
+                <a href="{{ linked_p.url }}" class="button">Ver produto</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Metaobject Slider",
+    "settings": [
+      {
+        "type": "product",
+        "id": "produto-principal",
+        "label": "Produto Principal"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Metaobject Slider"
+      }
+    ]
+  }
+{% endschema %}

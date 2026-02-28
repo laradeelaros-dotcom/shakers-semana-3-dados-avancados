@@ -7,12 +7,19 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
+
 {
     "sections": {
         "lotion-lp": {
             "type": "lotion-lp"
         },
+        "metaobject-slider":{
+            "type": "metaobject-slider"
+        },
+
     },
-    "order": ["lotion-lp"]
+    
+        
+    "order": ["metaobject-slider", "lotion-lp"]
 }
 
