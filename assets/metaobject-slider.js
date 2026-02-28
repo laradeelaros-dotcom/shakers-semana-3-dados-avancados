@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const swiper = new Swiper('.my-metaobject-slider', {
     loop: true,
-    // AJUSTE AQUI:
+    // 
     slidesPerView: 1, // 
     spaceBetween: 20,
     
