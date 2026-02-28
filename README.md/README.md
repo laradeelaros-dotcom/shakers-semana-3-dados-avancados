@@ -1,36 +1,31 @@
-#shakers-semana-2-lp-lotions
+# Desafio: shakers-semana-3-dados-avancados
 
-# O que foi implementado:
--Criação de uma conta DEV na Shopify
--Criação de uma Landing Page, através da "Loja Virtual"
--Foi inserido o título e o conteúdo da página através de (page.title e page.content)
 
-## Produto principal via Schema, mostrando:
-- Titulo
-- Preço com money 
-- Imagem principal
-- Link para o produto
+**Metafields e Metaobjetos:** São ferramentas de dados avançadas da Shopify. Enquanto Metafields guardam informações extras de um objeto (como um produto), Metaobjetos funcionam como "mini tabelas" personalizadas que permitem criar estruturas de dados complexas e reutilizáveis.
 
-## Coleção com 3 produtos
+##  O que foi implementado
+Um slider dinâmico de recomendações que consome uma lista de metaobjetos associada ao produto principal. O slider utiliza a biblioteca Swiper.js para navegação responsiva.
 
-### Foi adicionada loop para uma coleção com três produtos, também contendo: 
-- Titulo
-- Preço com money 
-- Imagem principal
-- Link para o produto
+## Passo a Passo de Configuração
 
-## Campos editaveís pelo ADMIN (via schema)
-- Produt
-- Collection 
+### 1. Como criar o Metaobjeto
+* Primeiro, precisa ir em **Conteúdo > Metaobjetos**.
+* Criar uma definição chamada `Products with banner`.
+* Adicionar os campos: `produto_banner` (tipo Produto) e `banner` (tipo Arquivo/Imagem).
 
-# Como testar localmente
+### 2. Como criar o Metafield
+* Ir em **Configurações > Dados personalizados > Produtos**.
+* Criar um metacampo chamado `related_products_with_banner`.
+* Selecionar o tipo **Metaobjeto** e apontar ele para a definição criada no passo anterior.
 
-- Não foi criado uma página home, sendo assim, a primeira pagina se iniciará com "erro404", sendo necessário ir no ADMIN, em "Páginas/lotion-lp"
+### 3. Como associar ao produto
+* No Admin, acesse o produto desejado.
+* No final da página, é necessario localizar o metacampo e selecionar as entradas de metaobjetos criadas.
 
-- Acessando localmente utilizando "shopify theme dev -s locoes-magicas" ou shopify theme pull. 
+### 4. Como testar localmente
+* Precisa ter o **Shopify CLI** instalado.
+* Executar o comando `shopify theme dev` no terminal para visualizar as alterações.
 
-# LINK DO VIDEO 
-https://drive.google.com/file/d/1YJlE7YgfO8AzIevyO1cwcDpV5mzMoum2/view?usp=sharing
-
-# LINK PULL REQUEST 
-https://github.com/laradeelaros-dotcom/shakers-semana-2-lp-lotions/pull/3
+##
+* **Pull Request:** [Cole o link do seu PR aqui]
+* **Vídeo Demonstrativo:** [Cole o link do seu vídeo aqui]
