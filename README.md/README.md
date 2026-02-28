@@ -27,5 +27,5 @@ Um slider dinâmico de recomendações que consome uma lista de metaobjetos asso
 * Executar o comando `shopify theme dev` no terminal para visualizar as alterações.
 
 ##
-* **Pull Request:** [Cole o link do seu PR aqui]
-* **Vídeo Demonstrativo:** [Cole o link do seu vídeo aqui]
+* **Pull Request:** https://github.com/laradeelaros-dotcom/shakers-semana-3-dados-avancados/pull/1
+**Link do video** https://drive.google.com/file/d/1zBGCtbCukdu8hvhpxGrOCe4TY9kBDmb7/view?usp=sharing
