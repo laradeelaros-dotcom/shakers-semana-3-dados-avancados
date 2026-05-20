@@ -29,8 +29,6 @@
 
 - Acessando localmente utilizando "shopify theme dev -s locoes-magicas" ou shopify theme pull. 
 
-# LINK DO VIDEO 
-https://drive.google.com/file/d/1YJlE7YgfO8AzIevyO1cwcDpV5mzMoum2/view?usp=sharing
 
 # LINK PULL REQUEST 
 https://github.com/laradeelaros-dotcom/shakers-semana-2-lp-lotions/pull/3
